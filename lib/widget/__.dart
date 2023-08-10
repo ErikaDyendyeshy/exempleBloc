@@ -1,0 +1,11 @@
+export 'package:parallel/widget/p_button_widget.dart';
+export 'package:parallel/widget/p_confirmation_code_widget.dart';
+export 'package:parallel/widget/p_input_text_widget.dart';
+export 'package:parallel/widget/p_pinput_widget.dart';
+export 'package:parallel/widget/p_svg_icon.dart';
+export 'package:parallel/widget/p_title_block_widget.dart';
+export 'package:parallel/widget/p_warning_text_widget.dart';
+export 'package:parallel/widget/p_avatar_widget.dart';
+export 'package:parallel/widget/p_more_about_user_widget.dart';
+export 'package:parallel/widget/p_bottom_sheet_widget.dart';
+export 'package:parallel/widget/p_bottom_sheet_transparent_widget.dart';
