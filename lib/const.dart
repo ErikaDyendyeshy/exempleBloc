@@ -1,3 +1,3 @@
-const String apiUrl = 'http://80.240.27.48/';
-const double horizontalPaddingScreen = 16.0;
-const double verticalPaddingScreen = 20.0;
+const String apiKey = 'a8c1a6021e27df3efddddc85554e21b7';
+const String apiUrl = 'https://api.themoviedb.org';
+const String posterPath = 'https://image.tmdb.org/t/p/w500';

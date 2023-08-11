@@ -1,6 +1,6 @@
-# parallel
+# bloc
 
-parallel application
+A new Flutter project.
 
 ## Getting Started
 

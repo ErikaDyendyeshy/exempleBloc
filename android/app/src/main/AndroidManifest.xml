@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.nearcoast.parallel.parallel">
+    package="com.example.bloc">
    <application
-        android:label="parallel"
+        android:label="bloc"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
