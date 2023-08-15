@@ -1,4 +1,5 @@
 import 'package:bloc_project/data/data_source/movie_api_service.dart';
+import 'package:bloc_project/data/model/cast_model.dart';
 import 'package:bloc_project/data/model/movie_model.dart';
 import 'package:bloc_project/data/model/trailer_model.dart';
 import 'package:get_it/get_it.dart';
@@ -11,10 +12,14 @@ class MovieRepository {
   }
 
   Future<MovieModel> getMovieById({required int movieId}) {
-    return _movieApiService.getMovieById(movieId: movieId);
+    return _movieApiService.getMovieById(movieId: movieId).catchError((error) {print(error);});
   }
 
   Future<List<TrailerModel>> getTrailerById({required int movieId}) {
-    return _movieApiService.getTrailerById(movieId: movieId);
+    return _movieApiService.getTrailerById(movieId: movieId).catchError((error) {print(error);});
+  }
+
+  Future<List<CastModel>>  getCastListById({required int movieId}) {
+    return _movieApiService.getCastListById(movieId: movieId).catchError((error) {print(error);});
   }
 }

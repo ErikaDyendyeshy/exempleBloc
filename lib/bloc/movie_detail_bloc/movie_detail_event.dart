@@ -21,3 +21,12 @@ class TrailerListFetched extends MovieDetailEvent {
   @override
   List<Object?> get props => [movieId];
 }
+
+class CastListFetched extends MovieDetailEvent {
+  final int movieId;
+
+  const CastListFetched(this.movieId);
+
+  @override
+  List<Object?> get props => [movieId];
+}

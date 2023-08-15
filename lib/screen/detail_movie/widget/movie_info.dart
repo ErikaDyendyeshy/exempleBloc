@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MovieInfo extends StatelessWidget {
-  final MovieModel movie;
 
-  const MovieInfo({Key? key, required this.movie}) : super(key: key);
+
+  const MovieInfo({Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,11 @@ class MovieInfo extends StatelessWidget {
         case MovieDetailStatus.initial:
           return const Center(child: CupertinoActivityIndicator());
         case MovieDetailStatus.success:
-          return _detail(movie: state.movie!);
+          if (state.isLoading || state.movie == null) {
+            return const  CupertinoActivityIndicator();
+          } else {
+            return  _detail(movie: state.movie!);
+          }
         case MovieDetailStatus.failure:
           return const Center(child: Text('failed to fetch posts'));
       }
@@ -136,9 +140,6 @@ class MovieInfo extends StatelessWidget {
         ),
         Text(
           movie.overview,
-        ),
-        const SizedBox(
-          height: 30,
         ),
       ]),
     );

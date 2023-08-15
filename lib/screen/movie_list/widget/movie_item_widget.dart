@@ -3,6 +3,7 @@ import 'package:bloc_project/data/model/movie_model.dart';
 import 'package:bloc_project/screen/detail_movie/detail_screeen.dart';
 import 'package:bloc_project/screen/movie_list/widget/rating_circle_widget.dart';
 import 'package:bloc_project/style/pallete.dart';
+import 'package:bloc_project/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class MovieItemWidget extends StatelessWidget {
@@ -69,13 +70,11 @@ class MovieItemWidget extends StatelessWidget {
               Text(
                 movie.title,
                 maxLines: 2,
-                // textAlign: TextAlign.center,
                 style: const TextStyle(fontSize: 16),
               ),
               Text(
-                movie.releaseDate,
-                // textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 12),
+                Utils.formatFullDate(movie.releaseDate),
+                style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
               ),
             ],
           ),

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:bloc_project/const.dart';
+import 'package:bloc_project/data/model/cast_model.dart';
 import 'package:bloc_project/data/model/movie_model.dart';
 import 'package:bloc_project/data/model/trailer_model.dart';
 import 'package:http/http.dart' as http;
@@ -74,6 +75,32 @@ class MovieApiService {
       return List<TrailerModel>.from(
         data['results'].map(
           (movie) => TrailerModel.fromJson(movie),
+        ),
+
+      );
+    } else {
+      throw Exception('Oops! Failed to load movies');
+    }
+  }
+
+  Future<List<CastModel>> getCastListById({required int movieId}) async{
+    final url = Uri.parse('$apiUrl/3/movie/$movieId/credits');
+    final query = {
+      'api_key': apiKey,
+      'language': 'en-EN',
+    };
+
+    final response = await http.get(url.replace(queryParameters: query));
+
+    if (response.statusCode == 200) {
+      print(url.replace(
+        queryParameters: query,
+      ));
+      final data = jsonDecode(response.body);
+      // log(response.body);
+      return List<CastModel>.from(
+        data['cast'].map(
+              (movie) => CastModel.fromJson(movie),
         ),
 
       );
